@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light}body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
+<title>Gửi em 20/10</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;600;700&family=Dancing+Script:wght@500;700&display=swap&subset=vietnamese">
+<style>
+  /* Layout: một cột hẹp như tấm thiệp dài, cánh hoa rơi phía sau, thư là tâm điểm */
+  :root {
+    --bg: #fff1f5;
+    --bg-2: #ffe3ec;
+    --card: #fffafc;
+    --fg: #5b2a3e;
+    --muted: #9b6379;
+    --accent: #f0769f;
+    --accent-deep: #d94f82;
+    --accent-soft: #ffd0df;
+    --line: #f7c9d8;
+    --shadow: rgba(217, 79, 130, 0.18);
+    --font-display: "Pacifico", "Dancing Script", cursive;
+    --font-hand: "Dancing Script", "Pacifico", cursive;
+    --font-body: "Quicksand", "Be Vietnam Pro", system-ui, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #2b1621;
+      --bg-2: #3a1d2c;
+      --card: #3b2231;
+      --fg: #ffe7ef;
+      --muted: #dba5ba;
+      --accent: #ff8fb4;
+      --accent-deep: #ffb0cb;
+      --accent-soft: #6a3249;
+      --line: #5d3246;
+      --shadow: rgba(0, 0, 0, 0.35);
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #2b1621;
+    --bg-2: #3a1d2c;
+    --card: #3b2231;
+    --fg: #ffe7ef;
+    --muted: #dba5ba;
+    --accent: #ff8fb4;
+    --accent-deep: #ffb0cb;
+    --accent-soft: #6a3249;
+    --line: #5d3246;
+    --shadow: rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%) fixed, var(--bg);
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    padding-block: 28px 56px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    overflow-x: hidden;
+  }
+  #petals { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
+  main { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+  /* Hero */
+  .hero { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 10px; padding-top: 12px; }
+  .tag {
+    font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700;
+    color: var(--accent-deep); background: var(--accent-soft); padding: 6px 16px; border-radius: 999px;
+  }
+  .date {
+    font-family: var(--font-display); font-size: clamp(76px, 24vw, 128px); line-height: 1.05;
+    color: var(--accent); margin: 4px 0 0;
+    text-shadow: 0 6px 0 var(--accent-soft), 0 14px 28px var(--shadow);
+  }
+  .hero h1 { font-family: var(--font-hand); font-weight: 700; font-size: clamp(28px, 8vw, 40px); line-height: 1.2; margin: 0; text-wrap: balance; }
+  .hero p { margin: 0; color: var(--muted); max-width: 30ch; text-wrap: balance; }
+  .scroll-hint { margin-top: 10px; color: var(--accent); font-size: 22px; animation: bob 2.2s ease-in-out infinite; }
+
+  /* Thư */
+  .letter-wrap { position: relative; padding-top: 34px; }
+  .flap {
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 76px; height: 76px; border-radius: 50%;
+    background: var(--accent); color: #fff; display: grid; place-items: center;
+    font-size: 34px; box-shadow: 0 8px 20px var(--shadow); z-index: 2; border: 4px solid var(--bg);
+  }
+  .letter {
+    background: var(--card); border: 2px dashed var(--line); border-radius: 28px;
+    padding: 64px max(22px, 6vw) 30px; box-shadow: 0 18px 44px var(--shadow);
+  }
+  .letter h2 { font-family: var(--font-hand); font-size: 34px; margin: 0 0 12px; color: var(--accent-deep); }
+  .letter p { margin: 0 0 14px; max-width: 58ch; }
+  .sign { font-family: var(--font-hand); font-size: 32px; color: var(--accent-deep); text-align: right; margin: 18px 0 0 !important; }
+
+  /* Lý do */
+  section h2.title { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 7vw, 34px); color: var(--accent-deep); text-align: center; margin: 0 0 6px; text-wrap: balance; }
+  section .sub { text-align: center; color: var(--muted); margin: 0 0 22px; font-size: 15px; }
+  .reasons { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .reason {
+    position: relative; text-align: left; font: inherit; color: inherit; cursor: pointer;
+    background: var(--card); border: 1.5px solid var(--line); border-radius: 22px; padding: 18px 20px 18px;
+    min-width: 0; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .reason:hover { transform: translateY(-3px); box-shadow: 0 12px 26px var(--shadow); border-color: var(--accent); }
+  .reason strong { font-size: 18px; color: var(--accent-deep); padding-right: 34px; }
+  .reason span.txt { font-size: 15px; color: var(--muted); }
+  .reason .heart { position: absolute; top: 14px; right: 16px; font-size: 22px; color: var(--accent-soft); transition: color .2s ease, transform .2s ease; }
+  .reason.on .heart { color: var(--accent); transform: scale(1.25); }
+  .count { text-align: center; margin-top: 16px; color: var(--muted); font-size: 15px; font-variant-numeric: tabular-nums; }
+  .count b { color: var(--accent-deep); font-size: 20px; }
+
+  /* Lời chúc */
+  .wishes { display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; list-style: none; }
+  .wishes li {
+    display: flex; gap: 14px; align-items: flex-start; background: var(--card);
+    border-radius: 20px; padding: 16px 18px; border: 1.5px solid var(--line);
+  }
+  .wishes .bow { flex: none; width: 36px; height: 36px; border-radius: 50%; background: var(--accent-soft); color: var(--accent-deep); display: grid; place-items: center; font-weight: 700; }
+  .wishes p { margin: 0; min-width: 0; }
+
+  /* Bất ngờ cuối */
+  .surprise { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .btn {
+    font: inherit; font-weight: 700; color: #fff; background: var(--accent); border: 0; cursor: pointer;
+    padding: 14px 28px; border-radius: 999px; box-shadow: 0 10px 24px var(--shadow);
+    transition: transform .15s ease, background .2s ease;
+  }
+  .btn:hover { background: var(--accent-deep); transform: translateY(-2px); }
+  .btn:active { transform: scale(.97); }
+  .final { font-family: var(--font-hand); font-size: clamp(28px, 8vw, 38px); line-height: 1.3; color: var(--accent-deep); margin: 0; text-wrap: balance; animation: pop .6s ease both; }
+  footer { text-align: center; color: var(--muted); font-size: 14px; }
+
+  :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 12px; }
+
+  /* Tim bay khi chạm */
+  .burst { position: fixed; z-index: 5; pointer-events: none; color: var(--accent); font-size: 22px; animation: rise 1.1s ease-out forwards; }
+  @keyframes rise { from { opacity: 1; transform: translate(0, 0) scale(.6); } to { opacity: 0; transform: translate(var(--dx), -90px) scale(1.3); } }
+  @keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+  @keyframes pop { from { opacity: 0; transform: scale(.85); } to { opacity: 1; transform: scale(1); } }
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-hint, .final { animation: none; }
+    .reason, .btn { transition: none; }
+    .burst { display: none; }
+  }
+</style>
+</head>
+<body>
+
+
+<canvas id="petals" aria-hidden="true"></canvas>
+
+<main>
+  <header class="hero">
+    <span class="tag">Ngày Phụ nữ Việt Nam</span>
+    <div class="date">20.10</div>
+    <h1>Gửi bé à hã húi của anh</h1>
+    <p>Một góc nhỏ màu hồng anh làm riêng cho em hôm nay.</p>
+    <div class="scroll-hint" aria-hidden="true">&#9825;</div>
+  </header>
+
+  <div class="letter-wrap">
+    <div class="flap" aria-hidden="true">&#9829;</div>
+    <article class="letter">
+      <h2 id="loi-ngo">Gửi em,</h2>
+      <p>Hôm nay là 20/10 nên anh muốn làm riêng cho em một trang web màu hồng. Hơi phèn phèn một xíu, nhưng anh biết em thích mà.</p>
+      <p>Cảm ơn em vì đã ở cạnh anh. Anh biết hiện giờ anh chưa đi làm nên anh không làm gì được nhiều cho bé hết. 😢 Nhưng anh vẫn luôn muốn dành cho bé những điều tốt nhất 😘💕</p>
+      <p>Anh cũng không hứa gì nhiều, nhưng anh sẽ cố gắng mỗi ngày để em luôn thấy vui khi ở cạnh anh.</p>
+      <p>Chúc em một ngày 20/10 thật xinh, nhận thật nhiều quà và cười thật nhiều. Thương à hã húi nhất trên đời lun 😘💕</p>
+      <p class="sign">Khanh</p>
+    </article>
+  </div>
+
+  <section aria-labelledby="ly-do">
+    <h2 class="title" id="ly-do">Vì sao anh thương em</h2>
+    <p class="sub">Chạm vào từng ô để thả tim nha</p>
+    <div class="reasons" id="reasons">
+      <button class="reason" type="button"><span class="heart">&#9829;</span><strong>Nụ cười của em</strong><span class="txt">Em cười là anh quên hết mệt trong ngày.</span></button>
+      <button class="reason" type="button"><span class="heart">&#9829;</span><strong>Sự quan tâm</strong><span class="txt">Em để ý những điều nhỏ xíu mà anh hay quên.</span></button>
+      <button class="reason" type="button"><span class="heart">&#9829;</span><strong>Dễ thương kiểu riêng</strong><span class="txt">Bánh bèo mà không ai bắt chước được.</span></button>
+      <button class="reason" type="button"><span class="heart">&#9829;</span><strong>Sự kiên nhẫn</strong><span class="txt">Anh còn nhiều tật, vậy mà em vẫn chịu anh.</span></button>
+      <button class="reason" type="button"><span class="heart">&#9829;</span><strong>Em lúc nào cũng xinh</strong><span class="txt">Đi chơi hay ở nhà, anh đều thấy vậy.</span></button>
+      <button class="reason" type="button"><span class="heart">&#9829;</span><strong>Đơn giản là em</strong><span class="txt">Không cần lý do nào to tát hơn thế.</span></button>
+    </div>
+    <p class="count">Em đã thả <b id="n">0</b> / 6 tim</p>
+  </section>
+
+  <section aria-labelledby="chuc">
+    <h2 class="title" id="chuc">Anh chúc em</h2>
+    <p class="sub">Ba điều nhỏ cho ngày hôm nay</p>
+    <ul class="wishes">
+      <li><span class="bow">1</span><p>Luôn xinh, luôn vui và luôn được làm đúng điều em thích.</p></li>
+      <li><span class="bow">2</span><p>Được yêu thương đúng cách, hôm nay và cả những ngày sau.</p></li>
+      <li><span class="bow">3</span><p>Mọi dự định của em đều thành, từ chuyện lớn đến chuyện nhỏ.</p></li>
+    </ul>
+  </section>
+
+  <section class="surprise">
+    <button class="btn" id="open" type="button" aria-expanded="false" aria-controls="last">Còn một điều nữa, bấm vào nha</button>
+    <p class="final" id="last" hidden>Thương bé à hã húi nhất trên đời lun.</p>
+  </section>
+
+  <footer>Làm bằng cả tấm lòng, ngày 20/10/2026</footer>
+</main>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tim bay lên khi chạm
+  function burst(x, y) {
+    if (reduce) return;
+    var el = document.createElement('span');
+    el.className = 'burst';
+    el.textContent = '♥';
+    el.style.left = x + 'px';
+    el.style.top = y + 'px';
+    el.style.setProperty('--dx', (Math.random() * 60 - 30) + 'px');
+    document.body.appendChild(el);
+    setTimeout(function () { el.remove(); }, 1100);
+  }
+  document.addEventListener('pointerdown', function (e) { burst(e.clientX, e.clientY); });
+
+  // Đếm tim
+  var cards = document.querySelectorAll('.reason');
+  var n = document.getElementById('n');
+  cards.forEach(function (c) {
+    c.setAttribute('aria-pressed', 'false');
+    c.addEventListener('click', function () {
+      var on = c.classList.toggle('on');
+      c.setAttribute('aria-pressed', String(on));
+      n.textContent = document.querySelectorAll('.reason.on').length;
+    });
+  });
+
+  // Điều bất ngờ cuối
+  var btn = document.getElementById('open');
+  var last = document.getElementById('last');
+  btn.addEventListener('click', function () {
+    var show = last.hidden;
+    last.hidden = !show;
+    btn.setAttribute('aria-expanded', String(show));
+    btn.textContent = show ? 'Gấp lại nè' : 'Còn một điều nữa, bấm vào nha';
+    if (show && !reduce) {
+      var r = btn.getBoundingClientRect();
+      for (var i = 0; i < 8; i++) {
+        (function (i) { setTimeout(function () { burst(r.left + Math.random() * r.width, r.top); }, i * 70); })(i);
+      }
+    }
+  });
+
+  // Cánh hoa rơi
+  var cv = document.getElementById('petals');
+  if (!cv || reduce) return;
+  var ctx = cv.getContext('2d');
+  var W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  function resize() {
+    W = window.innerWidth; H = window.innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var tones = ['255,182,205', '255,160,190', '255,205,220', '247,140,176'];
+  var count = W < 500 ? 16 : 28;
+  var ps = [];
+  for (var i = 0; i < count; i++) ps.push(make(true));
+  function make(init) {
+    return {
+      x: Math.random() * W,
+      y: init ? Math.random() * H : -20,
+      s: 7 + Math.random() * 9,
+      v: 0.35 + Math.random() * 0.7,
+      sw: Math.random() * Math.PI * 2,
+      sp: 0.008 + Math.random() * 0.014,
+      r: Math.random() * Math.PI * 2,
+      rv: (Math.random() - 0.5) * 0.02,
+      c: tones[Math.floor(Math.random() * tones.length)],
+      a: 0.45 + Math.random() * 0.4
+    };
+  }
+  function draw(p) {
+    ctx.save();
+    ctx.translate(p.x, p.y);
+    ctx.rotate(p.r);
+    ctx.fillStyle = 'rgba(' + p.c + ',' + p.a + ')';
+    ctx.beginPath();
+    ctx.moveTo(0, -p.s);
+    ctx.bezierCurveTo(p.s * 0.9, -p.s * 0.6, p.s * 0.8, p.s * 0.7, 0, p.s);
+    ctx.bezierCurveTo(-p.s * 0.8, p.s * 0.7, -p.s * 0.9, -p.s * 0.6, 0, -p.s);
+    ctx.fill();
+    ctx.restore();
+  }
+  function tick() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < ps.length; i++) {
+      var p = ps[i];
+      p.y += p.v; p.sw += p.sp; p.x += Math.sin(p.sw) * 0.6; p.r += p.rv;
+      if (p.y > H + 20) ps[i] = make(false);
+      draw(p);
+    }
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+
+</body>
+</html>
